@@ -10,7 +10,7 @@ pub enum Node {
 impl Node {
     pub fn eval(&self) -> i32 {
         match self {
-            Node::Int(i) => i,
+            Node::Int(i) => *i,
             Node::Add(n1, n2) => n1.eval() + n2.eval(),
         }
     }
