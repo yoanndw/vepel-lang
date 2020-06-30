@@ -15,5 +15,5 @@ fn main() {
            ^
 3----------|",
     );
-    println!("{:?}", print_node_pos(input));
+    println!("{:#?}", string_to_chars(input));
 }
