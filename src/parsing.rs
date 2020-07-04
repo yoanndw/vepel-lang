@@ -6,7 +6,7 @@ pub struct CharGrid {
     width: usize,
 }
 
-fn grid_width(input: String) -> usize {
+fn grid_width(input: &String) -> usize {
     let lines = input.lines();
 
     lines
@@ -15,28 +15,20 @@ fn grid_width(input: String) -> usize {
         .unwrap()
 }
 
-pub fn string_to_chars(s: String) -> CharGrid {
+pub fn string_to_chars(s: &String) -> CharGrid {
     let mut chars = Vec::new();
-    let mut found_width = false;
-    let mut width = 0;
+    let width = grid_width(s);
 
     for (i, c) in s.char_indices() {
-        //println!("char {}/{}", i, width);
-        /*
-        if c == '\n' && !found_width {
-            width = i;
-            found_width = true;
-        }
-
-        let col = i / width;
+        let col = i % width;
         if c != '\n' {
             chars.push(c);
+        // End of line but not reached width yet
+        } else if col < width - 1 {
+            for _ in col..(width - 1) {
+                chars.push(' ');
+            }
         }
-        // New line too early
-        else if found_width && col < (width - 1) {
-            let spaces = " ".repeat(col - i);
-            chars.extend(spaces.chars());
-        }*/
     }
 
     CharGrid { chars, width }
