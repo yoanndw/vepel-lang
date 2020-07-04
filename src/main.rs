@@ -10,10 +10,7 @@ fn main() {
 
     // code.eval();
 
-    let input = String::from(
-        r"5--------->+------->$
-           ^
-3----------|",
-    );
-    println!("{:#?}", string_to_chars(input));
+    //5->$
+    let input = String::from(r"5->$");
+    println!("{:#?}", string_to_chars(&input));
 }
