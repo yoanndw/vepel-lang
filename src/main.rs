@@ -1,16 +1,1 @@
-mod ast;
-mod parsing;
-
-use ast::*;
-use parsing::*;
-
-fn main() {
-    // print(5 + 3)
-    // let code = Instruction::Print(Node::Add(Box::new(Node::Int(5)), Box::new(Node::Int(3))));
-
-    // code.eval();
-
-    //5->$
-    let input = String::from(r"5->$");
-    println!("{:#?}", string_to_chars(&input));
-}
+fn main() {}
